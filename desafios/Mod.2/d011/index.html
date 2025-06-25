@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordel Moderno</title>
+    <style>
+
+        @font-face {
+            font-family: 'Passion One';
+            src: url('fonts/Passion_One/PassionOne-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Sriracha';
+            src: url('fonts/Sriracha/Sriracha-Regular.ttf') format('truetype');
+            font-weight: 400;
+            font-style: normal;
+
+        }
+
+        :root {
+            --fonte0: Verdana, Geneva, Tahoma, sans-serif ;
+            --fonte1: 'Passion One', sans-serif;
+            --fonte2: 'Sriracha', cursive;
+        }
+
+
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        body {
+            font-family: var(--fonte2);
+            background-color: rgb(0, 0, 0);
+            height: 100vh;
+        }
+        header {
+            background-color: black;
+            padding: 30px;
+            min-height: 137px; 
+        }
+        header > h1 >.maior {
+            font-size: 1.5em;
+        }
+        header h1 {
+            font-family: var(--fonte1);
+            color: white;
+            font-size: 3em;
+            text-align: center;
+            
+        }
+        header p {
+            color: white;
+            font-size: 1.2em;
+            text-align: center;
+        }
+        main {
+            padding: 50px 20px 20px 20px;
+            background-color: white;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+        main p {
+            font-size: 1.4em;
+            line-height: 2.2em;
+        }
+        main > section >.paragrafo {
+            color: black;
+            margin-bottom: 114px;
+            padding: 0px 0px 0px 0px;
+        }
+        #poema2 {
+            margin: 0px -20px 0px -20px;
+            background-color: rgba(3, 53, 36, 0.5);
+            padding-top: 60px;
+            height: 410px;
+        }
+        #poema2 > p {
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.219);
+            color: white;
+            margin-left: 20px;
+            
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="maior">C</span>ORDEL <span class="maior">M</span>ODERNO</h1>
+        <p>Por <strong>Milton Duarte</strong></p>
+    </header>
+    <main>
+        <section id="poema1">
+            <p class="paragrafo">
+                Estou ficando cansado <br>
+                Da tal tecnologia <br>
+                So se fala por e-mail <br>
+                Mensagem curta e fria <br>
+                Twuitter e Facebook <br>
+                Antes que eu caduque <br>
+                Vou dizer tudo em poesia.
+            </p>
+        </section>
+        <section id="poema2">
+            <p class="paragrafo">
+                Não é mais como era antes <br>
+                É tudo abreviado <br>
+                "Você"  só tem duas letras <br>
+                O "O" e o "E" foi riscado <br>
+                Para declarar o amor <br>
+                Basta botar uma flor <br>
+                E um coração desenhado.
+            </p>
+        </section>
+        <section>
+            <p>
+                Arroba agora não pesa <br>
+                
+            </p>
+        </section>
+    </main>
+</body>
+</html>
