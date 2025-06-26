@@ -2,8 +2,8 @@
 <ul>
 <h2>Exercícios</h2>
 <li><a href="https://neyaraujo.github.io/html-css/exercicios/ex001">Ex001</a></li>
-<li>Ex002</li>
-<li>Ex003</li>
-<li>Ex004</li>
-<li>Ex005</li>
+<li><a href="https://neyaraujo.github.io/html-css/exercicios/ex002">Ex002</a></li>
+<li><a href="https://neyaraujo.github.io/html-css/exercicios/ex003">Ex003</a></li>
+<li><a href="https://neyaraujo.github.io/html-css/exercicios/ex004">Ex004</a></li>
+<li><a href="https://neyaraujo.github.io/html-css/exercicios/ex005">Ex005</a></li>
 </ul>
