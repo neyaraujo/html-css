@@ -3,51 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Formulário</title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <title>Trabaho Escolar</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            width: 100vw;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main {
+            text-align: center;
+        }
+
+        .main > h1 {
+            padding: 10px;
+        }
+        .main > a {
+            text-decoration: none;
+            color: white;
+            background-color: blueviolet;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+
+    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h2>Criar Uma Conta</h2>
-        </div>
-
-        <form action="cadastro.php" class="form">
-
-            <div class="form-control error">
-                <label for="username">Nome de Usuário</label>
-                <input type="text" id="username" placeholder="Digite seu nome de usuário">
-                <i></i>
-                <i></i>
-                <small>Mensagem de erro</small>
-            </div>
-            
-            <div class="form-control error">
-                <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Digite seu email">
-                <i></i>
-                <i></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control success">
-                <label for="password">Senha</label>
-                <input type="text" id="password" placeholder="Digite sua senha">
-                <i></i>
-                <i></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <div class="form-control">
-                <label for="passwor-confirmation">Confirmação de senha</label>
-                <input type="text" id="passwor-confirmation" placeholder="Digite sua senha novamente">
-                <i></i>
-                <i></i>
-                <small>Mensagem de erro</small>
-            </div>
-
-            <button type="submit">Enviar</button>
-        </form>
-    </div>
+    <main class="main">
+        <h1>Download</h1>
+        <a href="modificada.xlsx"> Baixar Planilha</a>
+    </main>
 </body>
 </html>

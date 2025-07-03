@@ -7,12 +7,15 @@
     <style>
         div.conteiner {
             background-color: lightsalmon;
-            height: 300px;
+            height: 400px;
             display: flex;
             flex-flow: row wrap;
-            justify-content: flex-start;
-            align-items: center;
-            align-content: flex-end;
+            justify-content: space-between; /*EIXO PRINCIPAL*/
+            align-items: flex-end; /* EIXO TRANSVERSAL*/
+            align-content:space-between; /* SO FUNCIONA COM WRAP OU WRAP-REVERSE*/
+            /*
+                Quando usado o comando row ou colum, temos apenas uma linha ou coluna afetada, porém quando wrap é acionado a row ou o colum se tornam uma quebra, então surge o ALIGN-CONTENT para trabalhar a quebra.
+            */
             
         }
 
@@ -20,7 +23,7 @@
             background-color: lightskyblue;
             border: 1px solid black;
             text-align: center;
-            width: 300px;
+            padding: 40px;
         }
     </style>
 </head>
@@ -29,10 +32,15 @@
         <div class="item">A</div>
         <div class="item">B</div>
         <div class="item">C</div>
-        <!-- <div class="item">D</div>
+        <div class="item">D</div>
         <div class="item">E</div>
         <div class="item">F</div>
-        <div class="item">G</div> -->
+        <div class="item">G</div>
+        <div class="item">H</div>
+        <div class="item">I</div>
+        <div class="item">K</div>
+        <div class="item">L</div>
+        <div class="item">M</div>
     </div>
 </body>
 </html>
