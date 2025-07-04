@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbible Box</title>
+    <style>
+        div.conteiner {
+            background-color: lightsalmon;
+            display: flex;
+            flex-flow: row nowrap;
+            padding: 5px;                 
+
+        }
+
+        div.item {
+            background-color: lightskyblue;
+            border: 1px solid black;
+            text-align: center;
+
+   }
+
+        div#a {
+
+            /* flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: 200px; */
+            flex: 1 0 200px;
+        }
+
+        div#b {
+            /* flex-grow: 4;
+            flex-shrink: 1;
+            flex-basis: 150px; */
+            flex: 4 1 150px;
+        }
+
+        div#c {
+            /* flex-grow: 1;
+            flex-shrink: 8;            
+            flex-basis: auto; */
+            flex: 1 8 auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="conteiner">
+        <div class="item" id="a">A</div>
+        <div class="item" id="b">B</div>
+        <div class="item" id="c">C</div>
+    </div>
+</body>
+</html>
