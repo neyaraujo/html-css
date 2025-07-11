@@ -1,0 +1,127 @@
+@charset "UTF-8";
+
+:root {
+    --cor1: #009688;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(231, 231, 231);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1em;
+    line-height: 1.5em;
+}
+
+.icone {
+    color: var(--cor1);
+}
+h1, h2, h3 {
+    color: grey;
+}
+.container {
+    
+    /* height: 100vh; */
+    /* border: 3px solid red; */
+    display: grid;
+    grid-template-columns: auto 2fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 100px;
+    gap: 20px;
+    padding: 10px;
+}
+
+.header {
+
+}
+
+.nome {
+    color: grey;
+    /* background-color: rebeccapurple; */
+    grid-area: 1 / 1 / 5 / 2;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+}
+
+.nome .porcento {
+    background-color: aqua;
+    border-radius: 5px;
+    padding: 0px 5px;
+    margin-bottom: 20px;
+    box-shadow: 0px 0px 3px 1px rgba(0, 0, 0, 0.295);
+}
+
+.nome .porcento {
+    color: white;
+    background-image: linear-gradient(to left, rgb(211, 211, 211) 50%, var(--cor1) 50%);
+    text-indent: 50px;
+}
+
+.nome h1 {
+    margin-bottom: 20px;
+
+}
+
+.nome h2 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.nome ul {
+    list-style-type: none;
+}
+
+.sobre {
+    /* background-color: aqua; */
+    text-align: justify;
+}
+
+.sobre ,.experiencia, .educacao h2 {
+    margin-bottom: 10px;
+}
+
+.experiencia {
+    /* background-color: burlywood; */
+}
+
+.educacao {
+    /* background-color: rgb(255, 0, 234); */
+    grid-row: 3 / 5;
+    grid-column: 2 / -1;
+}
+
+.item {
+    background-color: white;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.322);
+}
+.rodape {
+    grid-row-start: -2;
+    grid-row-end: -1 ;
+    grid-column-start: 1;
+    grid-column-end: -1;
+    background-color: var(--cor1);
+}
+
+.rodape {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+.rodape a, p {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+
+
+

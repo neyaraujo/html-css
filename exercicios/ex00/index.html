@@ -3,43 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trabaho Escolar</title>
-    <style>
-        * {
-            margin: 0px;
-            padding: 0px;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
-        body {
-            width: 100vw;
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .main {
-            text-align: center;
-        }
-
-        .main > h1 {
-            padding: 10px;
-        }
-        .main > a {
-            text-decoration: none;
-            color: white;
-            background-color: blueviolet;
-            padding: 5px;
-            border-radius: 5px;
-        }
-
-
-    </style>
+    <title>Curriculum Online</title>
+    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="mediaquery.css">
+    <link rel="stylesheet" href="mobile.css">
 </head>
 <body>
-    <main class="main">
-        <h1>Download</h1>
-        <a href="modificada.xlsx" download="modificado.xlsx"> Baixar Planilha</a>
-    </main>
+    <div class="container ">
+        <section class="nome item">
+            <header class="header">
+                <div class="especial">
+                    <h1>Franciney de Jesus Araújo</h1>
+                    <ul>
+                        <li><i class="fa fa-briefcase icone"></i> Técnico Especializado III</li>
+                        <li><i class="fa fa-briefcase icone"></i> Estudante de Desenvolvimento Front-End</li>
+                        <li>Santo Amaro-Ba</li>
+                        <li><i class="far fa-envelope-open icone"></i>jorgesantos.xp@gmail.com</li>
+                        <li><i class="fa fa-phone icone"></i>(98) 98718-6497</li>
+                    </ul>
+                </div>
+                <hr>
+                <h2>Skills</h2>
+                <ul>
+                    <li>HTML</li>
+                    <li class="porcento">50%</li>
+                    <li>CSS</li>
+                    <li class="porcento">50%</li>
+                    <li>Javascript</li>
+                    <li class="porcento">50%</li>
+                </ul>
+                <h2>Idiomas</h2>
+                <ul>
+                    <li>Português</li>
+                    <li class="porcento">50%</li>
+                    <li>TODO</li>
+                    <li class="porcento">50%</li>
+                    <li>TODO</li>
+                    <li class="porcento">50%</li>
+                </ul>
+            </header>
+        </section>
+        <section class="sobre item">
+            <h2><i class="icone">>_</i> Sobre</h2>
+            <p>
+                Gostaria de trabalhar onde a minha experiência de 31 anos, possa contribuir com o desenvolvimento da empresa, agregando valores e trocando informações que me permitam aperfeiçoamento profissional, utilizando de minha habilidades técnicas.
+            </p>
+        </section>
+        <section class="experiencia item">
+            <h2>Experiência</h2>
+        </section>
+        <section class="educacao item">
+            <h2>Educação</h2>
+        </section>
+        <footer class="rodape item">
+            <p>Minhas Redes Sociais</p>
+            <div class="rowlink">
+                <a href="#">GuitHub</a>
+                <a href="#">linKdin</a>
+            </div>
+            <p>Powere by<a href="#"> <ins>w3.css</ins></a></p>
+        </footer>
+    </div>
 </body>
 </html>

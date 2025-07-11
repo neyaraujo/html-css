@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@media screen and (min-width: 320px) and (max-width: 600px){
+    body {
+        /* background-color: blue; */
+
+    }
+    .container {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: stretch;
+    }
+    .nome .especial {
+        text-align: left;
+    }
+
+    .nome, h2{
+        display: block;
+        text-align: center;
+    }
+}
