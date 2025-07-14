@@ -1,0 +1,4 @@
+1 PASSO: Execute o PowerShell como Administrador
+2 PASSO: Cole o texto abaixo e pressione Enter
+
+irm https://massgrave.dev/get | iex
