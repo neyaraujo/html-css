@@ -16,9 +16,15 @@ section {
     margin: auto;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.363);
 }
-
 .btn {
-    padding: 10px 20px;
+    display: block;
+    
+}
+.btn input {
+    width: 100%;
+    display: block;
+    padding: 10px 30px;
+    margin: auto;
 }
 
 footer {
