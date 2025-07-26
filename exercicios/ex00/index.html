@@ -3,59 +3,368 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabuada</title>
-    <style>
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: rgb(0, 255, 191);
-
-        }
-        header h1{
-            color: white;
-            text-align: center;
-
-        }
-        section {
-            position: relative;
-            left: 50%;
-            transform: translateX(-50%);
-            display: inline-block;
-            margin: 0 auto;
-            background: white;
-            border-radius: 10px;
-            padding: 10px;
-        }
-        select {
-            width: 50%;
-        }
-        .content-resultado {
-            margin-top: 10px;
-            display: inline-block;
-            min-height: 100px;
-            background: #ccc;
-            padding: 10px;
-            border-radius: 10px;
-            box-sizing: border-box;
-        }
-        .content-resultado p {
-            margin: 0px;
-        }
-    </style>
+    <title>Gerador de Receitas</title>
 </head>
-<body class="main-page">
-    <header class="main-header">
-        <h1 class="main-title">Tabuada</h1>
-    </header>
-    <section class="content-section">
-        <div class="form-number">
-            <label class="label-number" for="input-number"></label>
-            <input type="number" name="input-number" id="input-number">
-            <button class="btn-primary" id="btn-gerar" onclick="gerarTabuada()">Gerar Tabuada</button>
+<style>
+    :root {
+        --cor0:#fff;
+        --cor1: #B3404A;
+        --cor2:#555;
+    }
+
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    ul, li, a {
+        text-decoration: none;
+        list-style: none;
+    }
+    .txt-shadow {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.444);
+    }
+
+    .txt-center{
+        text-align: center;
+    }
+    
+    body {
+        background: white;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .content-header {
+        width: 100%;
+    }
+
+    .content-header h1 {
+        color: var(--cor1);
+        font-size: 20px;
+        padding: 10px 0;
+        
+    }
+    .content-menu {
+        margin:  20px auto;
+        width: 80%;
+        max-width: 960px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .content-navigation {
+        display: flex;
+        
+    }
+    .content-navigation li {
+        margin-right: 20px;
+    }
+    .content-navigation li:last-child{
+        margin-right: 0px;
+    }
+    .content-navigation a {
+        color: var(--cor2);
+        font-weight: 600;
+    }
+    .container-app-total {
+        width: 100%;
+        background: var(--cor1);
+    }
+    .container-app-alinhado {
+        width: 80%;
+        max-width: 960px;
+        padding: 20px 0;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+    }
+    .container-app-alinhado h2 {
+        color: var(--cor0);
+        font-size: 20px;
+    }
+    .container-app-alinhado p{
+        color: white;
+    }
+    .container-img-app {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background: var(--cor0);
+        padding: 10px;
+        margin-right: 10px;
+    }
+    .container-story {
+        width: 40px;
+        height: 40px;
+        border-radius: 5px;
+        background: var(--cor0);
+        padding: 10px;
+        margin-right: 10px;
+    }
+    .container-app-txt {
+        display: flex;
+    }
+    .main-hero-bg {
+      background-image: url('hero.jpg');  
+      height: 80vh;
+      background-position: center;
+      background-size: cover;
+    }
+    .titulo-hero {
+        font-size: 70px;
+        margin-bottom: 10px;
+    }
+    .container-hero {
+        width: 80%;
+        margin: 0 auto;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .container-hero h1{
+        color: white;
+        text-align: center;
+        text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.222);
+    }
+    .container-hero h2 {
+        color: white;
+        text-align: center;
+        text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.222);
+    }
+    .hero-btn {
+        margin: 20px 0px;
+        display: flex;
+    }
+    .hero-btn-primary {
+        color: var(--cor0);
+        padding: 10px 20px;
+        background-color: var(--cor1);
+        margin-right: 20px;
+        border-radius: 5px;
+        font-weight: 600;
+    }
+    .btn-cor {
+        border: 1px solid var(--cor1);
+        background: var(--cor0);
+        color: var(--cor1);
+    }
+    .criar-receitas {
+        margin: 100px auto;
+        text-align: center;
+    }
+    .criar-receitas h1 {
+        font-size: 30px;
+        padding: 10px;
+    }
+    .criar-receitas p {
+        color: var(--cor2);
+        margin-bottom: 50px;
+    }
+    .criar-receitas a {
+        display: block;
+        color: var(--cor0);
+        background: var(--cor1);
+        padding: 15px;
+        font-weight: 600;
+        margin: 0 auto;
+        max-width: 50%;
+        border-radius: 5px;
+    }
+    .column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: #ebebeb;
+        padding: 20px 0;
+    }
+    .titulo1 {
+        text-align: center;
+    }
+    .titulo2 {
+        font-size: 20px;
+    }
+    .txt-cinza{
+        color: var(--cor2);
+    }
+
+    .container-center {
+        width: 80%;
+        display: flex;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .container-center .item {
+        padding: 10px;
+        flex-basis: auto;
+    }
+    .container-center .item h3 {
+        margin: 10px 0;
+    }
+    .container-center .item p {
+        color: var(--cor2);
+    }
+    .container-center .item img {
+        width: 50px;
+        height: 50px;
+        background: var(--cor1);
+        border-radius: 50%;
+    }
+    .container-buscas {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .container-buscas h1 {
+        font-size: 20px;
+        margin: 50px 0px 20px ;
+    }
+    .container-buscas h2 {
+        font-size: 16px;
+        color: var(--cor2);
+        margin-bottom: 20px;
+        font-weight: 400;
+    }
+    .dados-buscas {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 30px;
+    }
+    .container-buscas input{
+        width: 300px;
+        padding: 10px 5px;
+        border-radius: 5px;
+        border: 1px solid var(--cor1);
+        margin-right: 10px;
+    }
+    .container-buscas button {
+        color: var(--cor0);
+        padding: 10px 20px;
+        background-color: var(--cor1);
+        border-radius: 5px;
+        border: none;
+    }
+    .container-buscas p {
+        color: var(--cor2);
+        margin-bottom: 20px;
+    }
+    .container-buscas ul {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 100px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .container-buscas ul li {
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+    }
+    .container-buscas ul li a {
+        font-size: 14px;
+        color: #000;
+    }
+
+    
+</style>
+<body>
+    <header class="content-header">
+        <div class="content-menu">
+            <h1>Gerador de Receiras</h1>
+            <nav class="content-navigation">
+                <li><a href="">Início</a></li>
+                <li><a href="">Gerador</a></li>
+                <li><a href="">Receitas</a></li>
+                <li><a href="">Sobre</a></li>
+                <li><a href="">Pesquisa</a></li>
+            </nav>
         </div>
-        <div class="content-resultado">
-            <p id="resultado">Didite um número acima</p>
+    </header>
+    <section class="container-app-total">
+        <div class="container-app-alinhado">
+            <div class="container-app-txt">
+                <div class="container-img-app"><img src="" alt=""></div>
+                <div>
+                    <h2>Baixe nosso App Mobilie!</h2>
+                    <p>Receitas na palma da sua mão</p>
+                </div>
+            </div>
+            <div class="container-story">
+                <img src="" alt="">
+            </div>
         </div>
     </section>
-    <script src="ex017.js"></script>
+    <section class="main-hero-bg">
+        <div class="container-hero">
+            <h1 class="titulo-hero">Gerador de Receiras Inteligentes</h1>
+            <h2>
+                Crie receitas deliciosas com os ingredientes que você tem em casa ou nas <br> suas preferências culinárias.
+            </h2>
+            <div class="hero-btn">
+                <li><a class="hero-btn-primary" href="#">Gerar Receira</a></li>
+                <li><a class="hero-btn-primary btn-cor" href="#">Explorar Receitas</a></li>
+            </div>
+        </div>
+    </section>
+    <section class="criar-receitas">
+        <h1>Crie sua Receita Personalizada</h1>
+        <p>Informe os ingredientes disponiveis e nossas preferências para gerar sua receita</p>
+        <a href="">Ir para o Gerador Avançado</a>
+    </section>
+    <section>
+        <div class="column">
+            <div class="titulo1">
+                <h1>Como Funciona</h1>
+                <h2 class="txt-cinza titulo2">Crie receitas personalizadas em três passos simples</h2>
+            </div>
+            <div class="container-center">
+                <div class="item">
+                    <img src="" alt="">
+                    <h3>1Escolha os Ingredientes</h3>
+                    <p>Informe os ingredientes que você tem disponíveis ou gostaria de usar.</p>
+                </div>
+                <div class="item">
+                    <img src="" alt="">
+                    <h3>1Escolha os Ingredientes</h3>
+                    <p>Informe os ingredientes que você tem disponíveis ou gostaria de usar.</p>
+                </div>
+                <div class="item">
+                    <img src="" alt="">
+                    <h3>1Escolha os Ingredientes</h3>
+                    <p>Informe os ingredientes que você tem disponíveis ou gostaria de usar.</p>
+                </div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </section>
+    <section class="container-buscas">
+        <div>
+            <h1>Encontre Receitas Perfeitas</h1>
+            <h2>
+                Busque entre milhares de receitas ou explore nossas sugestões populares
+            </h2>
+            <div class="dados-buscas">
+                <input type="text" name="" id=""><button type="button">Buscar</button>
+            </div>
+            <p>Pesquisas populares</p>
+            <ul>
+                <li><a href="">Bolo de chocolate</a></li>
+                <li><a href="">frango assado</a></li>
+                <li><a href="">massa</a></li>
+                <li><a href="">salada</a></li>
+                <li><a href="">sobremesa rápida</a></li>
+                <li><a href="">café da manhã</a></li>
+                <li><a href="">lanche</a></li>
+                <li><a href="">sopa</a></li>
+  
+            </ul>
+        </div>
+    </section>
 </body>
 </html>
