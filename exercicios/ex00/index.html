@@ -14,7 +14,8 @@
     <header class="header">
             <nav>
                 <h1><a href="">Gerador de Receiras</a></h1>
-                <div class="nav-links" id="nav-links" onclick="hideMenu()">
+                <div class="nav-links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
                     <ul>
                         <li><a href="">Início</a></li>
                         <li><a href="">Gerador</a></li>
@@ -23,6 +24,7 @@
                         <li><a href="">Pesquisa</a></li>
                     </ul>
                 </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
             </nav>
     </header>
     
@@ -113,5 +115,17 @@
             </ul>
         </div>
     </section>
+
+
+    <script>
+        var navLinks = document.getElementById('navLinks')
+
+        function showMenu() {
+            navLinks.style.right = "0"
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px"
+        }
+    </script>
 </body>
 </html>

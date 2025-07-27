@@ -49,8 +49,9 @@ table {
 /* HEADER */
 
 .header {
-width: 100%;
-   position: relative;
+    width: 100%;
+    position: relative;
+    background: white;
 }
 
 .header nav {
@@ -88,19 +89,10 @@ width: 100%;
     width: 100%;
 }
 
-
-/*/////////////////*/
-
 .header h1 {
     font-size: 18px;
     color: var(--cor1);
     position: relative;
-}
-
-
-
-.fa {
-    display: none;
 }
 
 .content-header h1 {
@@ -116,20 +108,6 @@ width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-.content-navigation {
-    display: flex;
-    
-}
-.content-navigation li {
-    margin-right: 20px;
-}
-.content-navigation li:last-child{
-    margin-right: 0px;
-}
-.content-navigation a {
-    color: var(--cor2);
-    font-weight: 600;
 }
 
 /* APP DOWNLOAD */
@@ -162,15 +140,53 @@ width: 100%;
     margin-right: 20px;
 }
 
-@media screen and (max-width: 700px){
-
+nav .fa {
+    /* display: none; */
+}
+@media (max-width: 700px){
+    .content-app h1 {
+        font-size: 16px;
+    }
+    .content-app p {
+        font-size: 13px;
+    }
+    .content-app div.img {
+        width: 25px;
+    }
+    .nav-links ul {
+        padding: 30px;
+    }
+    .nav-links ul li {
+        display: block;
+    }
+    .nav-links ul li a {
+        color: var(--cor0);
+    }
+    .nav-links {
+        position: absolute;
+        background: var(--cor1);
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: all 1s;
+    }
+    nav .fa {
+        /* border: 1px solid black; */
+        display: block;
+        color: var(--cor1);
+        margin: 10px;
+        font-size: 22px;
+        cursor: pointer;
+    }
+    nav .fa-times {
+        color: var(--cor0);
+    }
 }
 
-
-
-/* ////////////////// */
-
-/* ==== HERO SECTION ===== */
+/* HERO */
 
 .container-hero {
     background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url('../img/hero.jpg');  
@@ -215,13 +231,25 @@ width: 100%;
     margin: 0% 2%;
 }
 
-
-.text-hero h1 {
-    font-size: 60px;
-    color: var(--cor0);
-}
 .text-hero p {
     color: var(--cor0);
+}
+
+@media (max-width: 700px){
+    .container-hero {
+        height: 70%;
+    }
+    .container-hero h1 {
+        font-size: 26px;
+    }
+    .container-hero p {
+        padding: 2% 6%;
+        font-size: 13px;
+    }
+    .btn-primary {
+        font-size: 13px;
+        padding: 5px 15px;
+    }
 }
 
 
