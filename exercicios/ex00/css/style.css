@@ -145,8 +145,9 @@ table {
 }
 
 nav .fa {
-    /* display: none; */
+    display: none;
 }
+
 @media (max-width: 700px){
     .content-app h1 {
         font-size: 16px;
@@ -207,9 +208,11 @@ nav .fa {
     text-align: center;
     color: var(--cor0);
 }
+
 .container-hero h1 {
     font-size: 60px;
 }
+
 .container-hero p {
     font-size: 16px;
 }
@@ -392,4 +395,60 @@ nav .fa {
     .dados-buscas {
         width: 90%;
     }
+}
+
+/* POPULAR-RECIPES */
+
+.popular-recipes {
+    padding: 2% 6%;
+    background-color: #fffaf0;
+}
+.popular-recipes__title {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #333;
+}
+.popular-recipes__list {
+    gap: 1.5rem;    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.popular-recipes__item {
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.300);
+    flex-basis: 300px;
+    flex-grow: 1;
+}
+
+.popular-recipes__image {
+    width: 100%;
+    aspect-ratio: 1.5/1;
+    border-radius: 8px;
+    object-fit: cover;
+
+}
+
+.popular-recipes__name {
+    font-size: 1.25rem;
+    margin: 1rem 0 0.5rem;
+    color: #444;
+}
+
+.popular-recipes__description {
+    font-size: 1rem;
+    color: #666;
+}
+
+.popular-recipes__button {
+    display: block;
+    margin-top: 20px;
+    padding: 2% 6%;
+    border: 1px solid #bbb;
+    border-radius: 5px;
 }
