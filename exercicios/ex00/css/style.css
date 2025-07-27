@@ -56,35 +56,35 @@ table {
     background: white;
 }
 
-.header nav {
+.header__nav {
     display: flex;
     padding: 2% 6%;
     justify-content: space-between;
     align-items: center;
 }
 
-.header nav h1 {
+.header__title {
     font-size: 18px;
     color: var(--cor1);
     position: relative;
 }
 
-.nav-links{
+.header__links{
     flex: 1;
     text-align: right;
 }
 
-.nav-links ul li {
+.header__links ul li {
     display: inline-block;
     padding: 8px 12px;
     position: relative;
 }
-.nav-links ul li a {
+.header__links ul li a {
     color: var(--cor2);
     font-size: 13px;
 }
 
-.nav-links ul li::after {
+.header__links ul li::after {
     content: '';
     width: 0%;
     height: 2px;
@@ -93,81 +93,34 @@ table {
     margin: auto;
     transition: 0.3s;
 }
-.nav-links ul li:hover::after{
+.header__links ul li:hover::after{
     width: 100%;
 }
 
-
-
-.content-header h1 {
-    color: var(--cor1);
-    font-size: 20px;
-    
-}
-.content-menu {
-    margin:  20px auto;
-    width: 80%;
-    max-width: 960px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-}
-
-/* APP DOWNLOAD */
-
-.row {
-    display: flex;
-    align-items: center;
-}
-.content-app {
-    width: 100%;
-    padding: 1% 6%;
-    background: var(--cor1);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.content-app h1 {
-    color: var(--cor0);
-    font-size: 20px;
-}
-.content-app p {
-    color: var(--cor0);
-    font-size: 16px;
-}
-.content-app div.img {
-    width: 50px;
-}
-.content-app > div > div.img {
-    margin-right: 20px;
-}
-
-nav .fa {
+.header .fa {
     display: none;
 }
 
-@media (max-width: 700px){
-    .content-app h1 {
+@media (max-width: 960px){
+    .header__title {
         font-size: 16px;
     }
-    .content-app p {
+    .content-app__description {
         font-size: 13px;
     }
-    .content-app div.img {
+    .content-app__img {
         width: 25px;
     }
-    .nav-links ul {
+    .header__list {
         padding: 30px;
     }
-    .nav-links ul li {
+    .header .header__list li {
         display: block;
     }
-    .nav-links ul li a {
+    .header .header__list a {
         color: var(--cor0);
     }
-    .nav-links {
+    .header__links {
         position: fixed;
         background: var(--cor3);
         height: 100vh;
@@ -178,19 +131,48 @@ nav .fa {
         z-index: 2;
         transition: all 1s;
     }
-    nav .fa {
+    .header .fa {
         display: block;
         color: var(--cor1);
         margin: 10px;
         font-size: 22px;
         cursor: pointer;
     }
-    nav .fa-times {
+    .header .fa-times {
         color: var(--cor0);
     }
     .header nav h1 {
     font-size: 16px;
+    }
 }
+
+/* APP DOWNLOAD */
+
+.content-app {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1% 6%;
+    background-color: var(--cor1);
+}
+.content-app__img {
+    width: 50px;
+}
+.content-app__mobile {
+    display: flex;
+    align-items: center;
+}
+
+.content-app__text {
+    color: #fff;
+    margin-left: 10px;
+}
+
+@media (max-width: 960px) {
+    .content-app__titulo {
+        font-size: 16px;
+    }
 }
 
 /* HERO */
@@ -207,6 +189,7 @@ nav .fa {
     align-items: center;
     text-align: center;
     color: var(--cor0);
+    padding: 2% 6%;
 }
 
 .container-hero h1 {
@@ -244,7 +227,7 @@ nav .fa {
     color: var(--cor0);
 }
 
-@media (max-width: 700px){
+@media (max-width: 960px){
     .container-hero {
         height: 70%;
     }
@@ -266,6 +249,7 @@ nav .fa {
 .sec-receitas {
     margin: 50px auto;
     text-align: center;
+    padding: 2% 6%;
 }
 .sec-receitas h1 {
     font-size: 30px;
@@ -285,7 +269,7 @@ nav .fa {
     border-radius: 5px;
 }
 
-@media (max-width: 700px){
+@media (max-width: 960px){
     .sec-receitas h1 {
         font-size: 18px;
     }
@@ -391,7 +375,7 @@ nav .fa {
     color: #000;
 }
 
-@media (max-width: 700px){
+@media (max-width: 960px){
     .dados-buscas {
         width: 90%;
     }
