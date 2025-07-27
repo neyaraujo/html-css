@@ -283,34 +283,48 @@ table {
 
 /* INGREDIENTES */
 
-.sec-ingredientes {
+.ingredientes {
     width: 100%;
     padding: 2% 6%;
     margin: 0 auto;
-    background: var(--cor4);
+    background: #fffaf0;
     text-align: center;
 }
-.sec-ingredientes h1 {
-    
-}
-.sec-ingredientes p {
-    color: var(--cor2);
-    margin-bottom: 50px;
-}
-.container-card {
+.ingredientes__container {
     display: flex;
     justify-content: space-between;
     gap: 2%;
 }
-.container-card img {
-    max-width: 50px;
-    margin: auto;
+.ingredientes p {
+    color: var(--cor2);
+    margin-bottom: 50px;
 }
-.container-card h3 {
+
+.ingredientes h3 {
     font-size: 16px;
 }
-.container-card p {
-    font-size: 16px;
+
+.ingredientes__circulo {
+    width: 80px;
+    aspect-ratio: 1/1;
+    display: inline-block;
+    background: #e6e2db;
+    border-radius: 50%;
+    position: relative;
+}
+
+.ingredientes .fa {
+    color: #B3404A;
+    font-size: 30px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@media (max-width: 960px) {
+    .ingredientes__container {
+        flex-direction: column;
+    }
 }
 
 /* BUSCAS */
@@ -406,7 +420,7 @@ table {
     padding: 1rem;
     border-radius: 12px;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.300);
-    flex-basis: 300px;
+    flex-basis: 250px;
     flex-grow: 1;
 }
 
@@ -436,3 +450,41 @@ table {
     border: 1px solid #bbb;
     border-radius: 5px;
 }
+
+/* CULINÁRIA */
+.culinari {
+    width: 100%;
+    padding: 2% 6%;
+}
+
+.culinari__card {
+    gap: 1.5rem;    
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.culinari__item {
+    min-height: 200px;
+    background-image: linear-gradient(to top, #444, #999, #eee);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.300);
+    flex-basis: 300px;
+    flex-grow: 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    cursor: pointer;
+}
+
+
+.culinari__item h3 {
+    color: #fff;
+}
+.culinari__item p {
+    color: #fff;
+}
+
