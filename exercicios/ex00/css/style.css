@@ -488,3 +488,75 @@ table {
     color: #fff;
 }
 
+/* MY RECEITA */
+
+.my-receita {
+    display: inline-block;
+    width: 100%;
+    padding: 5% 6%;
+    text-align: center;
+    background: var(--cor1);
+    margin: 5% 0;
+}
+
+.my-receita h1, .my-receita p {
+    color: #fff;
+}
+.btn {
+    display: inline-block;
+    padding: 8px 20px;
+    margin: 1em 0;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+@media (max-width: 960px) {
+    .my-receita h1 {
+        font-size: 20px;
+    }
+    .my-receita p {
+        font-size: 14px;
+    }
+}
+
+/* FOOTER */
+
+.footer {
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #aaa;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 2% 6%;
+    text-align: left;
+    gap: 2%;
+    margin-bottom: 100px;
+}
+
+.footer__item {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0;
+}
+.footer__item h1 {
+    font-size: 20px;
+}
+.footer__item li, .footer__item p {
+    font-size: 13px;
+    color: var(--cor2);
+}
+@media (max-width: 960px){
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+        text-align: left;
+    }
+}
+
+
+
+
