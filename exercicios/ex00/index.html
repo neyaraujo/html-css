@@ -3,89 +3,225 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analisador de Números</title>
+    <title>Gerador de Receitas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+<link rel="stylesheet" href="css/style.css">
+<body>
 
-<style>
-    body {
-        background-color: rgb(0, 140, 255);
-    }
-    p, input, button {
-        display: block;
-        margin: auto;
-    }
-    .header h1 {
-        color: white;
-        text-align: center;
-    }
-    .form {
-        background: white;
-        padding: 2%;
-        border-radius: 10px;
-        width: 100%;
-        max-width: 400px;
-        margin: 0 auto;
-        box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.333);
-        display: flex;
-        flex-direction: column;
-    }
-    .form__entrada {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 5px;
-    }
-    .form__saida {
-        display: flex;
-        flex-direction: column;
-        
-    }
-    .form__saida button {
-        order: 0;
-        align-self: center;
-        padding: 10px 30px;
-        border-radius: 5px
-    }
+<!-- HEADER -->
 
-    .form__saida select {
-        width: 80%;
-        display: block;
-        margin: 10px auto;
-
-        
-    }
-    .footer p {
-        color: white;
-        text-align: center;
-    }
-
-
-</style>
-
-<body onload="reset()">
     <header class="header">
-        <h1>Analizador de Nùmeros</h1>
+            <nav class="header__nav">
+                <h1 class="header__title"><a href="index.html">Gerador de Receiras</a></h1>
+                <div class="header__links" id="navLinks">
+                    <i class="fa fa-times" onclick="hideMenu()"></i>
+                    <ul class="header__list">
+                        <li><a href="">Início</a></li>
+                        <li><a href="">Gerador</a></li>
+                        <li><a href="">Receitas</a></li>
+                        <li><a href="">Sobre</a></li>
+                        <li><a href="">Pesquisa</a></li>
+                    </ul>
+                </div>
+                <i class="fa fa-bars" onclick="showMenu()"></i>
+            </nav>
     </header>
-    <section class="form">
-        <article class="form__entrada">
-            <p class="form__texto">Número (entre 1 e 100): <input class="form__number" type="number" id="input-number"></p>
-            <input onclick="chamar()" class="form__button" type="button" value="Adicionar">
-        </article>
+    
+<!-- APP DOWNLOAD -->
 
-        <article class="form__saida">
-            <select class="form__list" name="" id="form__list" size="10">
-                <!-- option gerados pelo javascript -->
-            </select>
-            <button onclick="finalizar()" class="form__button" type="button">Finalizar</button>
-            <div class="form__result" id="form__result">
-                <!-- Aqui será gerado o resultado gerado por javascript -->
-            </div>
-        </article>
+    <section class="content-app">
+                <div class="content-app__mobile">
+                    <a class="content-app__link" href=""><img class="content-app__img" src="img/icon-playstory.png" alt=""></a>
+                    <div class="content-app__text">
+                        <h1 class="content-app__titulo">Baixe nosso App Mobilie!</h1>
+                        <p class="content-app__description">Receitas na palma da sua mão</p>
+                    </div>
+                </div>
+                <div class="content-app__story">
+                    <a href=""><img class="content-app__img" src="img/icon-playstory.png" alt=""></a>
+                </div>
     </section>
-    <footer class="footer">
-        <p>&copy;CursoemVideo</p>
-    </footer>
 
-    <script src="script.js"></script>
+<!-- HERO -->
+
+    <section class="container-hero">
+            <h1>Gerador de Receiras Inteligentes</h1>
+            <p>
+                Crie receitas deliciosas com os ingredientes que você tem em casa ou nas <br> suas preferências culinárias.
+            </p>
+            <ul>
+                <li><a class="btn-primary" href="#">Gerar Receira</a></li>
+                <li><a class="btn-primary btn-white" href="#">Explorar Receitas</a></li>
+            </ul>
+    </section>
+
+    <!-- CRIAR RECEITAS -->
+
+    <section class="sec-receitas">
+        <h1>Crie sua Receita Personalizada</h1>
+        <p>Informe os ingredientes disponiveis e nossas preferências para gerar sua receita</p>
+        <a href="">Ir para o Gerador Avançado</a>
+    </section>
+
+    <!-- INGREDIENTES -->
+    <section class="ingredientes">
+                <h1>Como Funciona</h1>
+                <p>
+                    Crie receitas personalizadas em três passos simples
+                </p>
+            <div class="ingredientes__container">
+                <div class="ingredientes__item">
+                    <div class="ingredientes__circulo">
+                        <i class="fa fa-cutlery"></i>
+                    </div>
+                    <h3>1. Escolha os Ingredientes</h3>
+                    <p>Informe os ingredientes que você tem disponíveis ou gostaria de usar.</p>
+                </div>
+                <div class="ingredientes__item">
+                    <div class="ingredientes__circulo">
+                        <i class="fa fa-coffee"></i>
+                    </div>
+                    <h3>2. Escolha os Ingredientes</h3>
+                    <p>Informe os ingredientes que você tem disponíveis ou gostaria de usar.</p>
+                </div>
+                <div class="ingredientes__item">
+                    <div class="ingredientes__circulo">
+                        <i class="fa fa-clock-o"></i>
+                    </div>
+                    <h3>3. Escolha os Ingredientes</h3>
+                    <p>Informe os ingredientes que você tem disponíveis ou gostaria de usar.</p>
+                </div>
+                <div></div>
+                <div></div>
+        </div>
+    </section>
+<!-- BUSCAS -->
+
+    <section class="container-buscas">
+            <h1>Encontre Receitas Perfeitas</h1>
+            <p>
+                Busque entre milhares de receitas ou explore nossas sugestões populares
+            </p>
+            <div class="dados-buscas">
+                <input type="text" name="" id="campoBusca">
+                <button type="button" id="botaoBuscar">Buscar</button>
+            </div>
+            <p>Pesquisas populares</p>
+            <ul>
+                <li><a href="">Bolo de chocolate</a></li>
+                <li><a href="">frango assado</a></li>
+                <li><a href="">massa</a></li>
+                <li><a href="">salada</a></li>
+                <li><a href="">sobremesa rápida</a></li>
+                <li><a href="">café da manhã</a></li>
+                <li><a href="">lanche</a></li>
+                <li><a href="">sopa</a></li>
+  
+            </ul>
+    </section>
+
+<!-- POPULAR-RECIPES         -->
+
+    <section class="popular-recipes">
+        <h2 class="popular-recipes__title">Receitas Populares</h2>
+        
+        <div class="popular-recipes__list">
+
+            <article class="popular-recipes__item">
+                <img src="img/creme-leite.jpg" alt="Bolo de Chocolate" class="popular-recipes__image">
+                <h3 class="popular-recipes__name">Creme de Leite e Maizena</h3>
+                <p class="popular-recipes__description">Prepare-se para uma sobremesa leve, vremosa e que vai te consquistar! Com apenas três ingredientes, e...</p>
+                <a class="popular-recipes__button" href="">Ver Receita</a>
+            </article>
+
+            <article class="popular-recipes__item">
+                <img src="img/mousse-nesquick.jpg" alt="Bolo de Chocolate" class="popular-recipes__image">
+                <h3 class="popular-recipes__name">Mousse de Nesquick</h3>
+                <p class="popular-recipes__description">Prepare um mousse incrivelmente fácil e saboroso com Nesquick e Nescau! Perfeito para qualquer momento...</p>
+                <a class="popular-recipes__button" href="">Ver Receita</a>
+            </article>
+
+            <article class="popular-recipes__item">
+                <img src="img/bolo-banana.jpg" alt="Bolo de Chocolate" class="popular-recipes__image">
+                <h3 class="popular-recipes__name">Bolo Cremoso de Banana</h3>
+                <p class="popular-recipes__description">Prepare-se para uma explosão de sabor! Este bolo cremoso de bana da terra é a combinação perfeita...</p>
+                <a class="popular-recipes__button" href="">Ver Receita</a>                
+            </article>
+        </div>
+    </section>
+
+<!-- CULINÁRIA -->
+
+    <section class="culinari">
+        <h1>Categorias Culinárias</h1>
+        <div class="culinari__card">
+            <article class="culinari__item">
+                <h3>Receitas Rápidas</h3>
+                <p>857 receitas</p>
+            </article>
+            <article class="culinari__item">
+                <h3>Vegetariana</h3>
+                <p>146 receitas</p>
+            </article>
+            
+            <article class="culinari__item">
+                <h3>Sobremesas</h3>
+                <p>623 receitas</p>
+            </article>
+        </div>
+    </section>
+
+<!-- MY RECEITA -->
+
+    <section class="my-receita">
+        <h1>Pronto para criar sua receita?</h1>
+        <p>
+            Experimente nosso gerador de receitas agora mesmo e descubra novas possibilidades
+        </p>
+        <a class="btn" href="">Criar Minha Receita</a>
+    </section>
+    
+    <div class="row-horizontal"></div>
+    
+    <section class="footer">
+        <article class="footer__item">
+            <h1>Gerador de Receitas</h1>
+            <p>
+                Crie receitas personalizadas com os ingredientes que você tem em casa.
+            </p>
+        </article>
+        <article class="footer__item">
+            <h1>Links Rápidos</h1>
+            <ul>
+                <li>Brasileira</li>
+                <li>Vegetariana</li>
+                <li>Sobremesas</li>
+            </ul>
+        </article>
+        <article class="footer__item">
+            <h1>Categorias</h1>
+            <ul>
+                <li>Sobre Nós</li>
+                <li>Dicas Culinárias</li>
+                <li>Contato</li>
+            </ul>
+        </article>
+        <article class="footer__item">
+            <h1>Informações</h1>
+            <p>Crie receitas personalizadas com os ingredientes que você tem em casa.</p>
+        </article>
+    </section>   
+    
+    <script>
+        var navLinks = document.getElementById('navLinks')
+
+        function showMenu() {
+            navLinks.style.right = "0"
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px"
+        }
+    </script>
 </body>
 </html>
