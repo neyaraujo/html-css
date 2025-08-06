@@ -16,29 +16,31 @@
             <p>Nº de Meses</p>
         </div>
         <div class="form-grid__item__input">
-            <input type="number" name="" id="">
+            <input type="number" name="meses" id="imes">
         </div>
         <div class="form-grid__item_text">
             <p>Capital</p>
         </div>
         <div class="form-grid__item__input">
-            <input type="number" name="" id="">
+            <input type="number" name="capital" id="icapital">
         </div>
         <div class="form-grid__item_text">
             <p>Taxa de juros</p>
         </div>
         <div class="form-grid__item__input row">
-            <input type="number" name="" id="">
+            <input type="number" name="juros" id="ijuros">
             <p>%</p>
         </div>
         <div class="form-grid__item_text">
             <p>Valor da prestação</p>
         </div>
         <div class="form-grid__item__input">
-            <input type="number" name="" id="">
+            <input type="number" name="parcela" disabled id="iparcela">
         </div>
+        <button class="btn" type="button" onclick="limpar()">Limpar</button>
+        <button class="btn" type="button" onclick="calcular()">Calcular</button>
 
-        <button class="btn" type="button">Calcular</button>
+
         
     </section>
 
@@ -82,5 +84,7 @@
             </table>
         </div>
     </section>
+
+    <script src="js/script.js"></script>
 </body>
 </html>

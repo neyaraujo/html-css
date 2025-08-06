@@ -10,7 +10,7 @@ body {
 .header h1 {
     margin: 100px auto 0;
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     font-size: 1em;
     padding: 5px;
     font-weight: 400;
@@ -20,7 +20,7 @@ body {
 }
 .form-grid {
     width: 100%;
-    max-width: 400px;
+    max-width: 350px;
     margin: auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -39,6 +39,12 @@ body {
 .form-grid__item__input p {
     margin-left: 5px;
 }
+
+.esconder{
+    opacity: 0;
+}
+
+
 .form-grid__item_text {
     text-align: right;
 }
@@ -47,10 +53,10 @@ body {
 }
 
 .btn {
-    grid-area: 5/1/6/-1;
     padding: 5px 30px; 
+    justify-content: right;
     display: block;
-    margin: auto;
+    width: 100px;
 }
 
 /* TABLE */
@@ -65,6 +71,7 @@ body {
     --stripe: #f9f9fb;
 }
 table {
+    display: none;
     width: 100%;
     max-width: 350px;
     margin: 50px auto;
