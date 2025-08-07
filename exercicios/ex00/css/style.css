@@ -41,7 +41,7 @@ body {
 }
 
 .esconder{
-    opacity: 0;
+    display: none;
 }
 
 
@@ -57,6 +57,24 @@ body {
     justify-content: right;
     display: block;
     width: 100px;
+}
+
+.result {
+
+    width: 100%;
+    max-width: 350px;
+    margin: 10px auto;
+}
+.result h1 {
+    background: #003D79;
+    color: white;    
+    font-size: 1em;
+    padding: 5px;
+    font-weight: normal;
+}
+.result p {
+    border-bottom: 1px solid #003D79;
+    padding: 5px;
 }
 
 /* TABLE */

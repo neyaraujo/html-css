@@ -1,3 +1,5 @@
+let resultE1 = window.document.getElementById('iresult')
+
 function calcular() {
     let mesesE1 = window.document.getElementById('imes')    
     let capitalE1 = window.document.getElementById('icapital')
@@ -10,7 +12,7 @@ function calcular() {
     let parcela = Number(parseFloat(parcelaE1.value))
 
     parcela = (parcelar(meses, capital, taxa).toFixed(2).replace('.',','))
-    parcelaE1.value = parcela
+    resultE1.innerHTML += `<p>Prestação: R$ ${parcela}</p>`
 
 }
 
