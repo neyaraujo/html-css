@@ -15,8 +15,6 @@ function calcular() {
         if(taxaE1.value ==""){
             taxaE1.value = 16
         }
-
-
     // Parse e sanitização
     const meses = parseInt(mesesE1.value.trim(), 10);
     const capital = parseFloat(capitalE1.value.trim().replace(',', '.'));
