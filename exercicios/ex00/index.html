@@ -3,88 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Emprestimo</title>
+    <title>Projeto Pé Na Terra</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<link rel="stylesheet" href="css/style.css">
 <body>
+    <section class="hero">
+        <div class="hero__tema">
+            <h1>capoeira</h1>
+            <h2><strong>CAMP</strong></h2>
+        </div>
 
-    <header class="header">
-        <h1>Finaciamento com prestações fixas</h1>
-    </header>
-    <section class="form-grid">
-        <div class="form-grid__item_text">
-            <p>Nº de Meses</p>
+        <div class="hero__button">
+            <button><img src="img/calendario.svg" alt="">24/Agostro <br> domingo</button>
         </div>
-        <div class="form-grid__item__input">
-            <input type="number" name="meses" id="imes">
-        </div>
-        <div class="form-grid__item_text">
-            <p>Capital</p>
-        </div>
-        <div class="form-grid__item__input">
-            <input type="number" name="capital" id="icapital">
-        </div>
-        <div class="form-grid__item_text">
-            <p>Taxa de juros</p>
-        </div>
-        <div class="form-grid__item__input row">
-            <input type="number" name="taxa" id="itaxa">
-            <p>%</p>
-        </div>
-        <div class="form-grid__item_text esconder">
-            <p>Valor da prestação</p>
-        </div>
-        <div class="form-grid__item__input esconder">
-            <input type="number" name="parcela" id="iparcela">
-        </div>
-        <button class="btn" type="button" onclick="limpar()">Limpar</button>
-        <button class="btn" type="button" onclick="calcular()">Calcular</button>
-    </section>
-    <section class="result" id="iresult">
-        <h1>Resultado da operação</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/DSrL8yDPo0s?si=4Lx482iS5-xp8CfQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
     </section>
 
-    <section>
-        <div>
 
-        </div>
-        <div>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Colaboradores</th>
-                        <th>Capital</th>
-                        <th>Parcela individual</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Colaborador 1</td>
-                        <td>4000,00</td>
-                        <td>773,33</td>
-                    </tr>
-                    <tr>
-                        <td>Colaborador 2</td>
-                        <td>1000,00</td>
-                        <td>193,33</td>
-                    </tr>
-                    <tr>
-                        <td>Colaborador 3</td>
-                        <td>1000,00</td>
-                        <td>193,33</td>
-                    </tr>
-                    <tfoot>
-                        <tr>
-                            <td>Total</td>
-                            <td>6000,00</td>
-                            <td>1160,00</td>
-                        </tr>
-                    </tfoot>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
-    <script src="js/script-m2.js"></script>
 </body>
 </html>
