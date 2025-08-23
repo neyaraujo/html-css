@@ -48,6 +48,9 @@ td, th {
     color: green;
 }
 /* ESCONDER */
+section.principal {
+    display: none;
+}
 section.jogadores {
     display: none;
 }
