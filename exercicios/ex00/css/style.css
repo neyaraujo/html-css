@@ -23,6 +23,7 @@ table {
 }
 td, th {
     border: 1px solid #ccc;
+    padding: 0 5px;
 }
 .align-left {
     text-align: left;
@@ -35,7 +36,6 @@ td, th {
     color: #777;
     display: block;
     text-align: center;
-    font-size: 0.8em;
 }
 
 .bi-star {
@@ -47,7 +47,10 @@ td, th {
 .bi-check-square-fill {
     color: green;
 }
-
+/* ESCONDER */
+section.jogadores {
+    display: none;
+}
 
 @media (max-width: 720px) {
     .header {
@@ -79,6 +82,9 @@ td, th {
     }    
 
     /* JOGADOR */
+    .jogador {
+        padding: 5px;
+    }
 
     .jogador p {
         color: #777;
@@ -103,6 +109,4 @@ td, th {
         color: #777;
     }
 
-
-    
 }
