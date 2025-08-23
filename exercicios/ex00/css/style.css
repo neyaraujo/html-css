@@ -16,6 +16,38 @@ body {
     line-height: 1.5em;
 }
 
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #ccc;
+}
+.align-left {
+    text-align: left;
+}
+.align-right {
+    text-align: right;
+}
+
+.main p{
+    color: #777;
+    display: block;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.bi-star {
+    color: #ccc;
+}
+.bi-star-fill {
+    color: green;
+}
+.bi-check-square-fill {
+    color: green;
+}
+
 
 @media (max-width: 720px) {
     .header {
@@ -26,12 +58,51 @@ body {
     justify-content: space-between;
 }
 
-.header a {
-    color: white;
-}
+    .header a {
+        color: white;
+    }
 
-.header i {
-    padding: 10px;
-    /* background-color: white; */
-}
+    .header i {
+        padding: 10px;
+        /* background-color: white; */
+    }
+
+    /* MAIN */
+
+    .jogador__input__name {
+        display: block;
+        width: 100%;
+        border: none;
+        margin: 2% auto;
+        border-bottom: 2px solid green;
+        padding: 5px;
+    }    
+
+    /* JOGADOR */
+
+    .jogador p {
+        color: #777;
+        font-size: 0.8em;
+    }
+
+    .jogador__nivel__star {
+        margin-bottom: 3%;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+    .jogador .bi {
+        font-size: 2.5em;
+    }
+
+    .jogador__nivel label {
+        font-size: 0.8em;
+    }
+    .jogador__nivel .bi-person-arms-up {
+        font-size: 1em;
+        color: #777;
+    }
+
+
+    
 }
