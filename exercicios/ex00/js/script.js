@@ -3,24 +3,40 @@ const paginaPrincipal = window.document.querySelector('section.principal')
     
     let retornoE1 = document.getElementById('retorno')
     let jogadorE1 = document.querySelector('#ijogador')
-
+    let numeroJogadoresE1 = document.querySelector('#numero-jogadores')
+    let jogador = jogadorE1.value
+    let jogadores = []
     reset()
     
-    
+    // mostra apenas a secão principal
     paginaPrincipal.style.display = 'block'
     
-    function cadastrar() {
+    // vai para a seção cadastrar
+    function adicionar() {
         paginaPrincipal.style.display = 'none'
         paginaJogadores.style.display = 'block'
     }
     
-    let jogadores = []
     function save() {
-        
+        let jogadorE1 = document.querySelector('#ijogador')
         let jogador = jogadorE1.value
-        jogadores.push(jogador)
+        if(inList(jogadores, jogador)) {
+            alert('ja exite esse nome')
+        } else {
+            jogadores.push(jogador)
+
+        }
+        
         retornoE1.innerHTML = jogadores
         reset();
+    }
+
+    function inList(l, v) {
+        if(l.indexOf(v) != -1) {
+            return true
+        }else {
+            return false
+        }
     }
     
     function reset() {
@@ -44,4 +60,11 @@ const paginaPrincipal = window.document.querySelector('section.principal')
             '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>'
             celula3.innerHTML = '<i class="bi bi-check-square-fill"></i>'
         }
+        numeroJogadoresE1.innerHTML = jogadores.length
+        
 }
+
+//SE o nome que foi cadastrado ja existe ENTÃO
+//retornar msg ja existe SE NÃO
+//continar cadastrando
+
