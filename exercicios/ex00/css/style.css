@@ -10,106 +10,90 @@ a {
 html, body {
     width: 100%;
     height: 100%;
-}
-body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5em;
+
 }
+
 
 table {
     border-collapse: collapse;
-    border-spacing: 0;
     width: 100%;
 }
 td, th {
     border: 1px solid #ccc;
     padding: 0 5px;
 }
-.align-left {
-    text-align: left;
-}
-.align-right {
-    text-align: right;
-}
+.align-left {text-align: left;}
+.align-right{text-align: right;}
 
 .main p{
     color: #777;
-    display: block;
     text-align: center;
 }
 
-.bi-star {
-    color: #ccc;
-}
-.bi-star-fill {
-    color: green;
-}
-.bi-check-square-fill {
-    color: green;
-}
-/* ESCONDER */
-section.principal {
-    display: none;
-}
-section.jogadores {
-    display: none;
-}
+.bi-star {color: #ccc;}
+.bi-star-fill {color: green;}
+.bi-check-square-fill {color: green;}
 
-@media (max-width: 720px) {
-    .header {
-    background: rgb(20, 20, 20);
-    padding: 10px;
+.erro {color: red;}
+.sucesso {color:green;}
 
+
+/* ESCONDER SEÇÕES*/
+section.principal {display: none;}
+section.jogadores {display: none;}
+
+/* HEADER RESPONSIVO */
+.header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #141414;
+    color: white;
 }
 
-    .header a {
-        color: white;
-    }
+.header a {color: white;}
 
-    .header i {
-        padding: 10px;
-        /* background-color: white; */
-    }
-
-    /* MAIN */
+/* INPUT JOGADOR */
 
     .jogador__input__name {
         display: block;
         width: 100%;
-        border: none;
         margin: 2% auto;
         border-bottom: 2px solid green;
         padding: 5px;
-    }    
+    }   
 
-    /* JOGADOR */
-    .jogador {
-        padding: 5px;
-    }
+/* NÍVEL */
 
-    .jogador p {
-        color: #777;
-        font-size: 0.8em;
-    }
+.jogador__nivel__star {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
 
-    .jogador__nivel__star {
-        margin-bottom: 3%;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-    }
-    .jogador .bi {
-        font-size: 2.5em;
-    }
+/* SORTEIO */
 
-    .jogador__nivel label {
-        font-size: 0.8em;
-    }
-    .jogador__nivel .bi-person-arms-up {
-        font-size: 1em;
-        color: #777;
-    }
+.sortear__btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.sortear #resultado-sorteado h2{
+    font-size: 1em;
+    background: greenyellow;
+    padding: 5px;
+}
+.sortear #resultado-sorteado p{
+    font-size: 1em;
+    padding-left: 5px;
+}
 
+/* RESPONSIVO */
+@media (max-width: 720px) {
+    .header { flex-wrap: wrap; }
+    .jogador__nivel label { font-size: 0.8em; }
 }

@@ -1,70 +1,89 @@
-const paginaPrincipal = window.document.querySelector('section.principal')
-    const paginaJogadores = window.document.querySelector('section.jogadores')
-    
-    let retornoE1 = document.getElementById('retorno')
-    let jogadorE1 = document.querySelector('#ijogador')
-    let numeroJogadoresE1 = document.querySelector('#numero-jogadores')
-    let jogador = jogadorE1.value
-    let jogadores = []
-    reset()
-    
-    // mostra apenas a secão principal
-    paginaPrincipal.style.display = 'block'
-    
-    // vai para a seção cadastrar
-    function adicionar() {
-        paginaPrincipal.style.display = 'none'
-        paginaJogadores.style.display = 'block'
-    }
-    
-    function save() {
-        let jogadorE1 = document.querySelector('#ijogador')
-        let jogador = jogadorE1.value
-        if(inList(jogadores, jogador)) {
-            alert('ja exite esse nome')
-        } else {
-            jogadores.push(jogador)
+const paginaPrincipal = document.querySelector('section.principal');
+const paginaJogadores = document.querySelector('section.jogadores');
+const retornoE1 = document.getElementById('retorno');
+const jogadorE1 = document.querySelector('#ijogador');
+const numeroJogadoresE1 = document.querySelector('#numero-jogadores');
+const tableE1 = document.querySelector('.tab-list');
+const resultadoSorteado = document.querySelector('#resultado-sorteado');
 
-        }
-        
-        retornoE1.innerHTML = jogadores
-        reset();
-    }
+let jogadores = [];
 
-    function inList(l, v) {
-        if(l.indexOf(v) != -1) {
-            return true
-        }else {
-            return false
-        }
-    }
-    
-    function reset() {
-        jogadorE1.value = '';
-    }
-    
-    const tableE1 = document.querySelector('.tab-list')
-    function voltar() {
-        tableE1.innerHTML = '';
-        for(let pos in jogadores){
-            
-            paginaPrincipal.style.display = 'block';
-            paginaJogadores.style.display = 'none';
-            let novaLinha = tableE1.insertRow();
-            let celula1 = novaLinha.insertCell(0)
-            let celula2 = novaLinha.insertCell(1)
-            let celula3 = novaLinha.insertCell(2)
-            
-            celula1.textContent = jogadores[pos]
-            celula2.innerHTML = 
-            '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i>'
-            celula3.innerHTML = '<i class="bi bi-check-square-fill"></i>'
-        }
-        numeroJogadoresE1.innerHTML = jogadores.length
-        
+// mostra apenas a seção principal
+paginaPrincipal.style.display = 'block';
+
+function adicionar() {
+    paginaPrincipal.style.display = 'none';
+    paginaJogadores.style.display = 'block';
 }
 
-//SE o nome que foi cadastrado ja existe ENTÃO
-//retornar msg ja existe SE NÃO
-//continar cadastrando
+function save() {
+    let nome = jogadorE1.value.trim();
+    if (!nome) {
+        retornoE1.textContent = "Digite um nome válido";
+        retornoE1.className = "erro";
+        return;
+    }
+    if (jogadores.includes(nome)) {
+        retornoE1.textContent = "Esse nome já existe!";
+        retornoE1.className = "erro";
+        return;
+    }
+    jogadores.push(nome);
+    retornoE1.textContent = `Total de Jogadores: ${jogadores.length}`;
+    retornoE1.className = "sucesso";
+    reset(jogadorE1);
+}
+
+function reset(input) {
+    input.value = '';
+    input.focus();
+}
+
+function voltar() {
+    tableE1.innerHTML = '';
+    paginaPrincipal.style.display = 'block';
+    paginaJogadores.style.display = 'none';
+
+    jogadores.forEach(jogador => {
+        let novaLinha = tableE1.insertRow();
+        novaLinha.insertCell(0).textContent = jogador;
+        novaLinha.insertCell(1).innerHTML = '<i class="bi bi-star"></i>'.repeat(5);
+        novaLinha.insertCell(2).innerHTML = '<i class="bi bi-check-square-fill"></i>';
+    });
+
+    numeroJogadoresE1.textContent = jogadores.length;
+}
+
+function sortear() {
+    const selectGrupo = document.querySelector('#igrupos');
+    let jogadoresPorGrupo = Number(selectGrupo.value);
+
+    if (jogadoresPorGrupo <= 0 || jogadores.length === 0) {
+        resultadoSorteado.textContent = "Adicione jogadores e selecione um número válido de jogadores por grupo!";
+        return;
+    }
+
+    // embaralhar jogadores
+    const sorteados = [...jogadores].sort(() => Math.random() - 0.5);
+
+    // calcular quantos grupos são necessários
+    const numGrupos = Math.ceil(sorteados.length / jogadoresPorGrupo);
+    const grupos = Array.from({ length: numGrupos }, () => []);
+
+    // distribuir jogadores em grupos (rodízio)
+    sorteados.forEach((jogador, i) => {
+        grupos[i % numGrupos].push(jogador);
+    });
+
+    // mostrar resultado
+    resultadoSorteado.innerHTML = grupos.map((grupo, idx) => `
+        <h2>Grupo ${idx + 1}</h2>
+        <p>${grupo.join("<br>")}</p>
+    `).join("");
+
+    // mostrar seção de sorteio
+    paginaPrincipal.style.display = 'none';
+    paginaJogadores.style.display = 'none';
+    document.querySelector('section.sortear').style.display = 'block';
+}
 

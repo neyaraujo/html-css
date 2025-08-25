@@ -14,7 +14,7 @@
             <a href="#"><i class="bi bi-list"></i></a>
             <a href="#">Time Equilib...</a>
             <a href="#"><i class="bi bi-search"></i></a>
-            <a href="#"><i class="bi bi-people-fill"></i></a>
+            <a href="#"><i onclick="sortear()" class="bi bi-people-fill"></i></a>
             <a href="#"><i onclick="adicionar()" class="bi bi-person-fill-add"></i></a>
             <a href="#"><i class="bi bi-three-dots-vertical"></i></a>
         </header>
@@ -55,6 +55,28 @@
                 <p id="retorno"></p>
             </div>
         </main>
+    </section>
+
+<!-- SORTEADOS -->
+
+    <section class="sortear">
+         <header class="header">
+            <a href="#"><i onclick="voltar()" class="bi bi-arrow-return-left"></i></a>
+            <a href="#">Todos os Grupos</a>
+            <a href="#"><i class="bi bi-share-fill"></i></i></a>
+            <a href="#"><i class="bi bi-three-dots-vertical"></i></a>
+        </header>
+        <div class="sortear__btn">
+            <select name="grupos" id="igrupos">
+                <option value="2">2 Jogadores por time</option>
+                <option value="3">3 Jogadores por time</option>
+                <option value="4">4 Jogadores por time</option>
+                <option value="5">5 Jogadores por time</option>
+            </select>
+            <button onclick="sortear()" type="button">SORTEAR</button>
+        </div>
+        <div id="resultado-sorteado">
+        </div>
     </section>
     <script src="js/script.js"></script>
 </body>
