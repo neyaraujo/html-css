@@ -1,11 +1,13 @@
 const paginaPrincipal = document.querySelector('section.principal');
 const paginaJogadores = document.querySelector('section.jogadores');
-const paginaSorteados = document.querySelector('section.sortear')
+const paginaSorteados = document.querySelector('section.sortear');
+const paginaEdition = document.querySelector('section.edition');
 const retornoE1 = document.getElementById('retorno');
 const jogadorE1 = document.querySelector('#ijogador');
 const numeroJogadoresE1 = document.querySelector('#numero-jogadores');
 const tableE1 = document.querySelector('.tab-list');
 const resultadoSorteado = document.querySelector('#resultado-sorteado');
+const EditionName = document.querySelector('#edition-nome')
 
 const headerPrincipal = document.documentElement.querySelector('header')
 
@@ -19,10 +21,12 @@ function adicionar() {
     paginaPrincipal.style.order = 1;
     paginaJogadores.style.order = 2;
     paginaSorteados.style.order = 3;
+    paginaEdition.style.order = 4;
 
     paginaPrincipal.style.display = 'none';
     paginaJogadores.style.display = 'block';
     paginaSorteados.style.display = 'none'
+    paginaEdition.style.display = 'none'
 }
 
 function save() {
@@ -48,11 +52,14 @@ function reset(input) {
     input.focus();
 }
 
+//VOLTAR
+
 function voltar() {
     tableE1.innerHTML = '';
     paginaPrincipal.style.display = 'block';
     paginaJogadores.style.display = 'none';
     paginaSorteados.style.display = 'none';
+    paginaEdition.style.display = "none"
 
     jogadores.forEach(jogador => {
         let novaLinha = tableE1.insertRow();
@@ -98,5 +105,15 @@ function sectionSortear() {
     paginaJogadores.style.display = 'none';
     paginaSorteados.style.display = 'block';
 }
+
+tableE1.addEventListener("click", function(e) {
+    if (e.target.tagName === "TD" && jogadores.indexOf(e.target.textContent) != -1)  {        
+        paginaPrincipal.style.display = "none"
+        paginaJogadores.style.display = 'none';
+        paginaSorteados.style.display = 'none';
+        paginaEdition.style.display = "block"
+        EditionName.value = e.target.textContent
+    }
+})
 
 

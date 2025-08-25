@@ -44,6 +44,7 @@ td, th {
 section.principal {display: none;}
 section.jogadores {display: none;}
 section.sortear {display: none;}
+section.edition {display: none;}
 
 /* HEADER RESPONSIVO */
 .header {
@@ -59,9 +60,10 @@ section.sortear {display: none;}
 
 /* INPUT JOGADOR */
 
-    .jogador__input__name {
+    input {
+        border: none;
         display: block;
-        width: 100%;
+        width: 98%;
         margin: 2% auto;
         border-bottom: 2px solid green;
         padding: 5px;
@@ -103,3 +105,15 @@ body {
     .header { flex-wrap: wrap; }
     .jogador__nivel label { font-size: 0.8em; }
 }
+
+/* EDITION */
+
+.edition__input {
+    display: flex;
+    flex-direction: column;
+}
+.edition .edition__input label {
+    font-size: 14px;
+    color: #777;
+}
+
