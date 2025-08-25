@@ -7,7 +7,7 @@ const jogadorE1 = document.querySelector('#ijogador');
 const numeroJogadoresE1 = document.querySelector('#numero-jogadores');
 const tableE1 = document.querySelector('.tab-list');
 const resultadoSorteado = document.querySelector('#resultado-sorteado');
-const EditionName = document.querySelector('#edition-nome')
+const editionName = document.querySelector('#edition-nome')
 
 const headerPrincipal = document.documentElement.querySelector('header')
 
@@ -106,14 +106,47 @@ function sectionSortear() {
     paginaSorteados.style.display = 'block';
 }
 
+let celulaEmEdicao = null;
+let jogadorOriginal = ""; // guardar valor antes da edição
+
 tableE1.addEventListener("click", function(e) {
-    if (e.target.tagName === "TD" && jogadores.indexOf(e.target.textContent) != -1)  {        
-        paginaPrincipal.style.display = "none"
-        paginaJogadores.style.display = 'none';
-        paginaSorteados.style.display = 'none';
-        paginaEdition.style.display = "block"
-        EditionName.value = e.target.textContent
+    if (e.target.tagName === "TD" && jogadores.includes(e.target.textContent)) {
+        celulaEmEdicao = e.target;
+        jogadorOriginal = e.target.textContent; // salva valor antigo
+
+        // troca de telas
+        paginaPrincipal.style.display = "none";
+        paginaJogadores.style.display = "none";
+        paginaSorteados.style.display = "none";
+        paginaEdition.style.display = "block";
+
+        editionName.value = e.target.textContent;
     }
-})
+});
 
+function editionSave() {
+    if (celulaEmEdicao) {
+        const novoNome = editionName.value.trim();
+        if (!novoNome) {
+            alert("Digite um nome válido!");
+            return;
+        }
+        if (jogadores.includes(novoNome) && novoNome !== jogadorOriginal) {
+            alert("Esse nome já existe!");
+            return;
+        }
 
+        // atualiza célula
+        celulaEmEdicao.textContent = novoNome;
+
+        // atualiza no array (com base no valor antigo)
+        let idx = jogadores.indexOf(jogadorOriginal);
+        if (idx !== -1) {
+            jogadores[idx] = novoNome;
+        }
+        editionName.style.color = "#ccc"
+        // volta para jogadores
+        // paginaEdition.style.display = "none";
+        // paginaJogadores.style.display = "block";
+    }
+}
