@@ -43,6 +43,7 @@ td, th {
 /* ESCONDER SEÇÕES*/
 section.principal {display: none;}
 section.jogadores {display: none;}
+section.sortear {display: none;}
 
 /* HEADER RESPONSIVO */
 .header {
@@ -90,6 +91,11 @@ section.jogadores {display: none;}
 .sortear #resultado-sorteado p{
     font-size: 1em;
     padding-left: 5px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 /* RESPONSIVO */
