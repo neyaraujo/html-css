@@ -150,3 +150,20 @@ function editionSave() {
         // paginaJogadores.style.display = "block";
     }
 }
+
+// BLOQUEAR REFRESH
+
+let lastY = 0;
+
+document.addEventListener("touchstart", function(e) {
+    lastY = e.touches[0].clientY;
+});
+
+document.addEventListener("touchmove", function (e){
+    let currentY = e.touches[0].clientY;
+
+    // se o ousuário tentar puxar para baixo no topo da página
+    if (window.scrollY === 0 && currentY > lastY) {
+        e.preventDefault();
+    }
+    }, {passive: false});
